@@ -1,0 +1,8 @@
+---
+id: persistent_dfs_planner
+name: Persistent DFS Planner
+description: Runs gambit strategy
+module: plugins.deception.app.strategies.persistentDFS
+params: {}
+ignore_enforcement_modules: []
+allow_repeatable_abilities: True

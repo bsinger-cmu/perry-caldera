@@ -1,0 +1,7 @@
+---
+id: greedy_planner
+name: Greedy Strategy
+description: Runs greedy strategy
+module: plugins.deception.app.strategies.greedy
+params: {}
+ignore_enforcement_modules: []

@@ -1,0 +1,15 @@
+---
+
+- id: deception-whoami
+  name: Deception whoami
+  description: Obtain user from current session
+  tactic: utility
+  repeatable: True
+  technique:
+    attack_id: T9000
+    name: 'Deception'
+  platforms:
+    linux:
+      sh:
+        command: |
+          whoami

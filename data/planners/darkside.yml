@@ -1,0 +1,8 @@
+---
+id: darkside
+name: Darkside Strategy
+description: Runs Darkside strategy
+module: plugins.deception.app.strategies.darkside
+params: {}
+ignore_enforcement_modules: []
+allow_repeatable_abilities: True

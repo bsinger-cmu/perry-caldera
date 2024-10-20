@@ -1,0 +1,8 @@
+---
+id: equifax_baseline
+name: Equifax Baseline Planner
+description: Runs Equifax baseline strategy
+module: plugins.deception.app.strategies.equifax_baseline
+params: {}
+ignore_enforcement_modules: []
+allow_repeatable_abilities: True

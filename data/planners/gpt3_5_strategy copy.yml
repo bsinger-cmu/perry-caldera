@@ -1,0 +1,8 @@
+---
+id: gpt3_5_strategy
+name: GPT3_5 Strategy
+description: Runs GPT3_5 Mini
+module: plugins.deception.app.strategies.llm.gpt3_5
+params: {}
+ignore_enforcement_modules: []
+allow_repeatable_abilities: True

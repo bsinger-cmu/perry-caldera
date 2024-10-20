@@ -1,0 +1,8 @@
+---
+id: ICS_Targeted
+name: ICS Targeted
+description: Runs Network DFS strategy
+module: plugins.deception.app.strategies.ICSTargeted
+params: {}
+ignore_enforcement_modules: []
+allow_repeatable_abilities: True

@@ -1,0 +1,19 @@
+---
+- id: deception-exfil-results
+  name: Records exfil results
+  description: Records exfil results
+  tactic: utility
+  repeatable: True
+  technique:
+    attack_id: T9012
+    name: "Deception Enum Folders"
+  platforms:
+    linux:
+      sh:
+        command: "find ~/ -maxdepth 1 -type f -exec md5sum {} +"
+        parsers:
+          plugins.deception.app.parsers.md5sum:
+            - source: host.dir.path
+              edge: has_children
+              target: host.dir.contents
+        timeout: 15

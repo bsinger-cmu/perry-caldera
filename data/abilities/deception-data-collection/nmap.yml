@@ -1,0 +1,23 @@
+---
+
+- id: deception-nmap
+  name: Deception Nmap Host
+  description: Scans a host for open ports
+  tactic: deception-data-collection
+  technique:
+    attack_id: T1021.004
+    name: "TODO"
+  repeatable: True
+  platforms:
+    linux:
+      sh:
+        command: 'nmap -sV --version-light -oX - #{scan.remote.addr}'
+        parsers:
+          plugins.deception.app.parsers.nmap:
+            - source: host.remote.ip
+              edge: has_open_ports
+              target: host.remote.ports
+            - source: host.remote.ip
+              edge: has_port_services
+              target: host.remote.port_services
+        timeout: 60

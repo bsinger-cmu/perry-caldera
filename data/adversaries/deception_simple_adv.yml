@@ -1,0 +1,11 @@
+---
+
+id: deception_simple_adv
+name: Deception Simple Adversary
+description: This is simple
+atomic_ordering:
+  - deception-ssh
+  - deception-user-add
+  - deception-user-run-agent
+  - deception-readfile
+  - deception-whoami

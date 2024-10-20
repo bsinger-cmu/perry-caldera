@@ -1,0 +1,28 @@
+---
+
+- id: deception-readfile
+  name: Deception read file
+  description: Read a file
+  tactic: utility
+  repeatable: True
+  technique:
+    attack_id: T9000
+    name: 'Deception'
+  platforms:
+    linux:
+      sh:
+        command: |
+          cat #{host.file.path}
+        parsers:
+          plugins.deception.app.parsers.cat:
+            - source: host.file.path
+              edge: has_contents
+              target: host.file.contents
+        timeout: 15
+  requirements:
+    - plugins.stockpile.app.requirements.paw_provenance:
+      - source: host.file.path
+    - plugins.stockpile.app.requirements.not_exists:
+      - source: host.file.path
+        edge: has_contents
+        target: host.file.contents

@@ -1,0 +1,20 @@
+---
+- id: deception-ls
+  name: Enumerate all folders withing a directory
+  description: Enumerates all folders within a directory
+  tactic: utility
+  repeatable: True
+  technique:
+    attack_id: T9012
+    name: "Deception Enum Folders"
+  platforms:
+    linux:
+      sh:
+        command: |
+          ls -l #{host.dir.path}
+        parsers:
+          plugins.deception.app.parsers.ls:
+            - source: host.dir.path
+              edge: has_children
+              target: host.dir.contents
+        timeout: 15

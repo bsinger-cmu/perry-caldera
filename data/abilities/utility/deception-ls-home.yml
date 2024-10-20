@@ -1,0 +1,26 @@
+---
+- id: deception-ls-home
+  name: List files based on home directory
+  description: List files based on home directory
+  tactic: utility
+  repeatable: True
+  technique:
+    attack_id: T9012
+    name: "Deception Enum Folders"
+  platforms:
+    linux:
+      sh:
+        command: "ls -l ~/#{host.dir.path}"
+        parsers:
+          plugins.deception.app.parsers.ls:
+            - source: host.dir.path
+              edge: has_children
+              target: host.dir.contents
+        timeout: 15
+  requirements:
+    - plugins.stockpile.app.requirements.paw_provenance:
+        - source: host.dir.path
+    - plugins.stockpile.app.requirements.not_exists:
+        - source: host.dir.path
+          edge: has_children
+          target: host.dir.children

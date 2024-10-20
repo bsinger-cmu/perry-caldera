@@ -1,0 +1,8 @@
+---
+id: gemini_15_pro_strategy
+name: Gemini 1.5 Pro Strategy
+description: Runs Gemini 1.5 Pro
+module: plugins.deception.app.strategies.llm.gemini_15_pro
+params: {}
+ignore_enforcement_modules: []
+allow_repeatable_abilities: True

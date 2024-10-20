@@ -1,0 +1,8 @@
+---
+id: gpt4o_mini_strategy
+name: GPT4o-mini Strategy
+description: Runs GPT-4o Mini
+module: plugins.deception.app.strategies.llm.gpt4o_mini
+params: {}
+ignore_enforcement_modules: []
+allow_repeatable_abilities: True

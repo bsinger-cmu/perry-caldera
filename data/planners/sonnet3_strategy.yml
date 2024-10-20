@@ -1,0 +1,8 @@
+---
+id: sonnet3_strategy
+name: Sonnet 3 Strategy
+description: Runs Sonnet 3
+module: plugins.deception.app.strategies.llm.sonnet3
+params: {}
+ignore_enforcement_modules: []
+allow_repeatable_abilities: True

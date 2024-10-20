@@ -1,0 +1,8 @@
+---
+id: opus3_strategy
+name: Opus 3 Strategy
+description: Runs Opus 3
+module: plugins.deception.app.strategies.llm.opus3
+params: {}
+ignore_enforcement_modules: []
+allow_repeatable_abilities: True

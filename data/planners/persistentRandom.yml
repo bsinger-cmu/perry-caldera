@@ -1,0 +1,8 @@
+---
+id: persistent_random_planner
+name: Persistent Random Planner
+description: Runs gambit strategy
+module: plugins.deception.app.strategies.persistentRandom
+params: {}
+ignore_enforcement_modules: []
+allow_repeatable_abilities: True

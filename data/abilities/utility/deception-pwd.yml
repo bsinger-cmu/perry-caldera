@@ -1,0 +1,16 @@
+---
+
+- id: deception-pwd
+  name: Deception print working directory
+  description: Print working directory
+  tactic: utility
+  repeatable: True
+  technique:
+    attack_id: T9009
+    name: 'Deception PWD'
+  platforms:
+    linux:
+      sh:
+        command: |
+          pwd
+        
