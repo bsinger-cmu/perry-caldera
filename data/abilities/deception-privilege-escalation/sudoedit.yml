@@ -1,0 +1,18 @@
+---
+- id: deception-sudoedit
+  name: Escelate privledges on with sudoedit vulnerability
+  description: Test for privledge escelation with sudoedit vulnerability
+  tactic: deception-privilege-escalation
+  technique:
+    attack_id: T9000
+    name: 'Deception'
+  repeatable: True
+  platforms:
+    linux:
+      sh:
+        command: 'bash sudoedit_exploit.sh #{server}'
+        payloads:
+        - sudoedit_exploit.sh
+        - downloadAgent.sh
+        cleanup:
+        parsers: []

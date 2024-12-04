@@ -1,0 +1,8 @@
+---
+id: gpt4o_strategy
+name: GPT4o Strategy
+description: Runs GPT-4o
+module: plugins.deception.app.strategies.llm.gpt4
+params: {}
+ignore_enforcement_modules: []
+allow_repeatable_abilities: True

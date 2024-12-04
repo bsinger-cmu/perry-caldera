@@ -1,0 +1,15 @@
+---
+- id: deception-copyfile
+  name: Deception copy file
+  description: Copy a file
+  tactic: utility
+  repeatable: True
+  technique:
+    attack_id: T9000
+    name: "Deception"
+  platforms:
+    linux:
+      sh:
+        command: |
+          cp #{host.dir.sourcePath} #{host.file.destinationPath}
+        timeout: 30

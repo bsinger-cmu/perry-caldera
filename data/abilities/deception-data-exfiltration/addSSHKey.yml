@@ -1,0 +1,14 @@
+---
+- id: deception-add-ssh-key
+  name: Add SSH key
+  description: Add SSH key
+  tactic: deception-data-exfiltration
+  technique:
+    attack_id: T1021.004
+    name: "Remote Services: SSH"
+  repeatable: True
+  platforms:
+    linux:
+      sh:
+        command: "echo '#{host.data.key}' >> ~/.ssh/authorized_keys; sed -i 's/\\\\//g' ~/.ssh/authorized_keys"
+        timeout: 15

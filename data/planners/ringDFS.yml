@@ -1,0 +1,8 @@
+---
+id: ring_DFS
+name: Ring DFS
+description: Runs Network DFS strategy
+module: plugins.deception.app.ringDFS
+params: {}
+ignore_enforcement_modules: []
+allow_repeatable_abilities: True

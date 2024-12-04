@@ -1,0 +1,20 @@
+---
+
+- id: deception-runbashcommand
+  name: Deception run a bash command
+  description: Run a bash command
+  tactic: utility
+  repeatable: True
+  technique:
+    attack_id: T9009
+    name: 'Deception'
+  platforms:
+    linux:
+      sh:
+        command: "#{host.command.input}"
+        parsers:
+          plugins.deception.app.parsers.bashoutput:
+            - source: host.command.input
+              edge: has_contents
+              target: host.command.output
+        timeout: 120

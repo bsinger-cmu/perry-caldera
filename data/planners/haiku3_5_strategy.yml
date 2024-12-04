@@ -1,0 +1,8 @@
+---
+id: haiku3_5_strategy
+name: Haiku 3.5 Strategy
+description: Runs Haiku 3.5
+module: plugins.deception.app.strategies.llm.haiku3_5
+params: {}
+ignore_enforcement_modules: []
+allow_repeatable_abilities: True

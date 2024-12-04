@@ -1,0 +1,12 @@
+---
+
+id: deception_two_path
+name: Deception Two Path
+description: This is simple
+atomic_ordering:
+  - deception-nmap
+  - deception-ssh
+  - deception-user-add
+  - deception-user-run-agent
+  - deception-readfile
+  - deception-whoami

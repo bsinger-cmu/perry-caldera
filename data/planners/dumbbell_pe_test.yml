@@ -1,0 +1,8 @@
+---
+id: dumbbell_pe_test
+name: Dumbbell PE test
+description: Runs Equifax baseline strategy
+module: plugins.deception.app.strategies.testers.dumbbell_pe_test
+params: {}
+ignore_enforcement_modules: []
+allow_repeatable_abilities: True

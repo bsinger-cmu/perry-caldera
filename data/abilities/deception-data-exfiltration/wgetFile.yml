@@ -1,0 +1,14 @@
+---
+- id: deception-wget-copy
+  name: Copy file using wget
+  description: Copy file using wget
+  tactic: deception-data-exfiltration
+  technique:
+    attack_id: T1021.004
+    name: "Remote Services: SSH"
+  repeatable: True
+  platforms:
+    linux:
+      sh:
+        command: "wget -P ~/ #{host.data.url}"
+        timeout: 15

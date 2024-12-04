@@ -1,0 +1,15 @@
+---
+- id: deception-user-make-sudoer
+  name: Add root user to /etc/sudoers
+  description: Add users to /etc/sudoers; enable $(whoami) to run anything as [hacker] without giving a password
+  tactic: deception-privilege-escalation
+  technique:
+    attack_id: T9000
+    name: 'Deception'
+  repeatable: True
+  platforms:
+    linux:
+      sh:
+        command: 'echo "hacker ALL=(ALL:ALL) ALL">>/etc/sudoers; echo "$(whoami) ALL = (hacker) NOPASSWD: ALL"'
+        cleanup:
+        parsers: []

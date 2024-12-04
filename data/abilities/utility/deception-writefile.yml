@@ -1,0 +1,16 @@
+---
+
+- id: deception-writefile
+  name: Deception write file
+  description: Write a file
+  tactic: utility
+  repeatable: True
+  technique:
+    attack_id: T9000
+    name: 'Deception'
+  platforms:
+    linux:
+      sh:
+        command: |
+          echo "#{host.file.contents}" >> #{host.file.path}
+        timeout: 15

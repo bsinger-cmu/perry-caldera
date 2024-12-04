@@ -1,0 +1,17 @@
+---
+- id: deception-parse-sshconfig
+  name: Parse SSH Config
+  description: Uses stormssh to parse the ssh config file
+  tactic: deception-data-collection
+  technique:
+    attack_id: T1021.006
+    name: "TODO"
+  repeatable: True
+  platforms:
+    linux:
+      sh:
+        command: "/usr/local/bin/storm list"
+        parsers:
+          plugins.deception.app.parsers.ssh:
+            - source: remote.ssh.cmd
+        timeout: 120

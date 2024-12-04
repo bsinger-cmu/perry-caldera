@@ -1,0 +1,29 @@
+---
+id: deception_enterprise
+name: Deception Enterprise
+description: This is simple
+atomic_ordering:
+  - deception-nmap
+  - deception-nmapsubnet
+  - deception-ssh
+  - deception-ssh-copy
+  - deception-user-add
+  - deception-user-run-agent
+  - deception-ncshell
+  - deception-vsftpd
+  - deception-whoami
+  - deception-ls
+  - deception-ls-home
+  - deception-pwd
+  - deception-readfile
+  - deception-struts
+  - deception-parse-sshconfig
+  - deception-scp-copy
+  - deception-wget-copy
+  - deception-exfil-results
+  - deception-copyfile
+  - deception-add-ssh-key
+  - deception-runbashcommand
+  - deception-writefile
+  - deception-writeable-sudoers
+  - deception-sudoedit

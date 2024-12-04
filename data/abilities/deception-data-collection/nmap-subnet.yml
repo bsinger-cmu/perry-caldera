@@ -1,0 +1,20 @@
+---
+
+- id: deception-nmapsubnet
+  name: Deception Nmap subnet
+  description: Scans a subnet for active ip addresses
+  tactic: deception-data-collection
+  technique:
+    attack_id: T1021.006
+    name: "TODO"
+  repeatable: True
+  platforms:
+    linux:
+      sh:
+        command: 'nmap --max-rtt-timeout 100ms -sn -oX - #{scan.subnet.addr}'
+        parsers:
+          plugins.deception.app.parsers.nmapsubnet:
+            - source: host.subnet.ipaddrs
+              edge: has_online_ipaddrs
+              target: host.subnet.online_ipaddrs
+        timeout: 60

@@ -1,0 +1,15 @@
+---
+- id: deception-scp-copy
+  name: Copy file using scp
+  description: Copy file using scp
+  tactic: deception-data-exfiltration
+  technique:
+    attack_id: T1021.004
+    name: "Remote Services: SSH"
+  repeatable: True
+  platforms:
+    linux:
+      sh:
+        command: "scp -P #{host.data.port} -o StrictHostKeyChecking=no
+          -o UserKnownHostsFile=/dev/null -o ConnectTimeout=3 #{host.data.user}@#{host.data.ip}:#{host.data.filepath} #{host.data.dst-filepath}"
+        timeout: 15

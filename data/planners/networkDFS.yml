@@ -1,0 +1,8 @@
+---
+id: network_DFS
+name: Network DFS
+description: Runs Network DFS strategy
+module: plugins.deception.app.strategies.networkDFS
+params: {}
+ignore_enforcement_modules: []
+allow_repeatable_abilities: True

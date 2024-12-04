@@ -1,0 +1,8 @@
+---
+id: targeted
+name: Targeted
+description: Runs targeted strategy
+module: plugins.deception.app.strategies.targeted
+params: {}
+ignore_enforcement_modules: []
+allow_repeatable_abilities: True

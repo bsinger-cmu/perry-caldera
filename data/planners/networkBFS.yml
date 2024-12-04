@@ -1,0 +1,8 @@
+---
+id: network_BFS
+name: Network BFS
+description: Runs Network BFS strategy
+module: plugins.deception.app.strategies.networkBFS
+params: {}
+ignore_enforcement_modules: []
+allow_repeatable_abilities: True
