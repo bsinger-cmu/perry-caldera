@@ -11,3 +11,5 @@
 !.logs/.gitkeep
 data/uploads/*
 *.vscode
+
+loc.py
